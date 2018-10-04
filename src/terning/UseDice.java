@@ -21,12 +21,31 @@ import java.util.Scanner;
 public class UseDice {
 
 	public static void main(String[] args) {
+		//programmet crasher hvis det ikke modtager en positiv integer.
+		//Fejl/original kode antager bare at inputtet fra brugeren er en positiv integer og kører metoden rollMultiple().
 		Dice cup = new Dice();   // Make an instance of Dice
 		Scanner keyboard=new Scanner(System.in);   // Make an instance of keyboard Scanner
+
+		keyboard Scanner
+				int n;
+
 		System.out.println("Welcome to the diceroll program");
 		System.out.println("How many times do you want to roll the dice?");
-		int n = keyboard.nextInt();  // Read integer
-		cup.rollMultiple(n);         // Roll the dice n times
-		keyboard.close();            // Close the scanner
+
+		do {
+			while (!keyboard.hasNextInt()) {
+				System.out.println("Nah, must be an integer");
+				keyboard.next();
+			}
+
+			n = keyboard.nextInt();
+			if ((n<=0){
+				System.out.println("Nope, integer is not positive");
+			}
+		} while (n<=0);
+
+		cup.rollMultiple(n);
+		keyboard.close();
+
 	}
 }
