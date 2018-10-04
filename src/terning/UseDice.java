@@ -26,6 +26,9 @@ public class UseDice {
 		System.out.println("Welcome to the diceroll program");
 		System.out.println("How many times do you want to roll the dice?");
 		int n = keyboard.nextInt();  // Read integer
+		if (n <= 0)
+			System.out.println("Error, vær venligst at indtaste et tal større end 0");
+		else if (n >= 1)
 		cup.rollMultiple(n);         // Roll the dice n times
 		keyboard.close();            // Close the scanner
 	}
